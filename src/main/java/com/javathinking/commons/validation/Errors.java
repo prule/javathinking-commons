@@ -25,6 +25,14 @@ public class Errors {
         return errors.isEmpty();
     }
 
+    public boolean isValid() {
+        return isEmpty();
+    }
+
+    public boolean isNotValid() {
+        return !isEmpty();
+    }
+
     @Override
     public String toString() {
         return errors.toString();
