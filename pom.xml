@@ -10,9 +10,9 @@
     <url>http://www.javathinking.com</url>
 
     <scm>
-        <connection>scm:svn:http://javathinking.googlecode.com/svn/trunk/javathinking-commons/</connection>
-        <developerConnection>scm:svn:https://javathinking.googlecode.com/svn/trunk/javathinking-commons</developerConnection>
-        <url>scm:svn:https://javathinking.googlecode.com/svn/trunk/javathinking-commons</url>
+        <connection>scm:git:ssh://git@github.com:prule/javathinking-commons.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:prule/javathinking-commons.git</developerConnection>
+        <url>https://github.com/prule/javathinking-commons.git</url>
     </scm>
 
     <distributionManagement>
