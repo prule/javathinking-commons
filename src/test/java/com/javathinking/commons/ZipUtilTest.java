@@ -5,6 +5,7 @@ import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.UUID;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -16,6 +17,7 @@ public class ZipUtilTest {
 
     @Test
     public void testUnzip() throws Exception {
+        System.out.println(UUID.randomUUID());
         File file = TestUtil.getFile(this, "zip1.zip");
         File dest = TestUtil.getTempDir();
         FileUtils.cleanDirectory(dest);

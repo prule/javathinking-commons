@@ -1,5 +1,7 @@
 package com.javathinking.commons.persistence;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,10 +9,11 @@ import java.util.List;
  * @author paul
  */
 public class ConfigurationServiceImpl {
-    private ConfigurationDao dao;
+    @Autowired
+    private ConfigurationRepository dao;
 
     public Integer getInt(String name) {
-        final List<Configuration> value = dao.get(name);
+        final List<Configuration> value = dao.findAllByNameOrderByIndex(name);
         return Integer.parseInt(value.get(0).getValue());
     }
 
@@ -34,15 +37,11 @@ public class ConfigurationServiceImpl {
 
     private List<String> strings(String name) {
         List<String> result = new ArrayList();
-        final List<Configuration> values = dao.get(name);
+        final List<Configuration> values = dao.findAllByNameOrderByIndex(name);
         for (Configuration value : values) {
             result.add(value.getValue());
         }
         return result;
-    }
-
-    public void setDao(ConfigurationDao dao) {
-        this.dao = dao;
     }
 
 }
